@@ -22,3 +22,8 @@ TEST_CASE("CleanDecimal Test")
 	REQUIRE(point2.getX() == 1.6);
 	REQUIRE(point2.getY() == 17.9);
 }
+TEST_CASE("GetPointStr Test")
+{
+	Point point1 = Point(1.23, 4.563);
+	REQUIRE(point1.getPointStr() == "X: 1.2, Y: 4.6");
+}

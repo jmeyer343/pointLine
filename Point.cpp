@@ -18,19 +18,19 @@ double Point::getY()
 }
 double Point::cleanDecimal(double pointDbl)
 {
-    /* string temp = to_string(pointDbl);
-    for (int i = 0; i < temp.length(); i++)
-    {
-        if (temp[i] == '.')
-        {
-            if (temp[i+2] - '0' >= 5)
-            {
-                temp[i+1] += 1;
-            }
-        }
-    }*/
    double temp = (pointDbl+.05) *10;
     int tempAsInt = temp;
     temp = tempAsInt / 10.0;
     return temp;
+}
+string Point::getPointStr()
+{
+    string retVal = "X: " + to_string(xVal);
+    retVal += retVal.substr(0, retVal.size()-5);
+    retVal += ", Y: " + to_string(yVal);
+    retVal += retVal.substr(0, retVal.size()-5);
+    
+    //string retVal = "X: " + to_string(xVal) + ", Y: " + to_string(yVal);
+
+    return retVal;
 }

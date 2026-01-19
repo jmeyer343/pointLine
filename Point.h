@@ -7,7 +7,7 @@ class Point{
 
 public:
     Point(double x, double y);
-    string printPointStr();
+    string getPointStr();
     double getX();
     double getY();
 

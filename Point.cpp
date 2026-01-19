@@ -2,6 +2,8 @@
 
 using namespace std;
 
+Point::Point(){}
+
 Point::Point(double x, double y) //initializes private members, sets double to a max of one decimal space
 {
     xVal = cleanDecimal(x);

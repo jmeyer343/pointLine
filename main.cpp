@@ -3,6 +3,7 @@
 #define CATCH_CONFIG_MAIN   
 #include "catch.hpp"
 #include "Point.h"
+#include "Line.h"
 using namespace std;
 
 //--
@@ -26,4 +27,12 @@ TEST_CASE("GetPointStr Test")
 {
 	Point point1 = Point(1.23, 4.563);
 	REQUIRE(point1.getPointStr() == "X: 1.2, Y: 4.6");
+}
+TEST_CASE("Line Constructor")
+{
+	Point a = Point(1.11, 2.22);
+	Point b = Point(3.33, 4.44);
+	Line line1 = Line(a, b);
+	REQUIRE(line1.getPointA().getX() == a.getX());
+	REQUIRE(line1.getPointB().getY() == b.getY());
 }

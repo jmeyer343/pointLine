@@ -6,6 +6,7 @@ using namespace std;
 class Point{
 
 public:
+    Point();
     Point(double x, double y);
     string getPointStr();
     double getX();

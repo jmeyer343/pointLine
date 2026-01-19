@@ -36,3 +36,10 @@ TEST_CASE("Line Constructor")
 	REQUIRE(line1.getPointA().getX() == a.getX());
 	REQUIRE(line1.getPointB().getY() == b.getY());
 }
+TEST_CASE("Line Length")
+{
+	Point a = Point(2, 2);
+	Point b = Point(4, 4);
+	Line line1 = Line(a, b);
+	REQUIRE(line1.length() == 2.8);
+}

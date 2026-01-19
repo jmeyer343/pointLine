@@ -10,7 +10,11 @@ class Line {
         Point getPointA();
         Point getPointB();
 
+        double length();
+
     private:
         Point aVal;
         Point bVal;
+
+        double cleanDecimal(double val);
 };

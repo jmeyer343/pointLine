@@ -17,5 +17,6 @@ private:
     double yVal;
 
     double cleanDecimal(double pointDbl);
+
 };
 

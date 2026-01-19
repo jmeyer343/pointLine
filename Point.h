@@ -15,6 +15,6 @@ private:
     double xVal;
     double yVal;
 
-    void cleanDecimal(double pointStr);
+    double cleanDecimal(double pointDbl);
 };
 

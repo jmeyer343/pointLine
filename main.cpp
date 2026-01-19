@@ -12,3 +12,13 @@ TEST_CASE("Constructor Test")
 	REQUIRE(point1.getX() == 1); 
 	REQUIRE(point1.getY() == 1);
 }
+TEST_CASE("CleanDecimal Test")
+{
+	Point point1 = Point(1.11, 1.11);
+	REQUIRE(point1.getX() == 1.1);
+	REQUIRE(point1.getY() == 1.1);
+
+	Point point2 = Point(1.567, 17.890);
+	REQUIRE(point2.getX() == 1.6);
+	REQUIRE(point2.getY() == 17.9);
+}

@@ -2,10 +2,13 @@
 #define CATCH_CONFIG_NO_POSIX_SIGNALS
 #define CATCH_CONFIG_MAIN   
 #include "catch.hpp"
+#include "Point.cpp"
 using namespace std;
 
 //--
-TEST_CASE("Test Template")  
+TEST_CASE("Constructor Test")  
 { 
-	REQUIRE(100 == 100); 
+	Point point1 = Point(1,1);
+	REQUIRE(point1.getX() == 1); 
+	REQUIRE(point1.getY() == 1);
 }

@@ -43,11 +43,32 @@ double Line::getSlope()
 
 bool Line::isPoint(Point z)
 {
+    double smallX;
+    double bigX;
+
+    if (aVal.getX() > bVal.getX())
+    {
+        bigX = aVal.getX();
+        smallX = bVal.getX();
+    }
+    else if (aVal.getX() < bVal.getX())
+    {
+        bigX = bVal.getX();
+        smallX = aVal.getX();
+    }
+    else
+    {
+        throw invalid_argument("Not a valid Line");
+    }
+
     bool reVal = false;
     double newY = slope * z.getX() + yIntercept;
     if (cleanDecimal(newY) == z.getY())
     {
-        reVal = true;
+        if (z.getX() >= smallX && z.getX() <= bigX)
+        {
+            reVal = true;
+        }
     }
     return reVal;
 }
@@ -69,4 +90,13 @@ double Line::calculateYIntercept()
 {
     double b = aVal.getY() - (slope*aVal.getX());
     return b;
+}
+
+Point Line::getMidpoint()
+{
+    double midY = (aVal.getY() + bVal.getY())/2;
+    double midX = (aVal.getX() + bVal.getX())/2;
+    Point midpoint = Point(midX, midY);
+
+    return midpoint;
 }

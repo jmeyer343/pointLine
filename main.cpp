@@ -63,4 +63,19 @@ TEST_CASE("Is Point On Line")
 	Point z2 = Point(8, 17.3);
 	Line line2 = Line(a2, b2);
 	REQUIRE(!line2.isPoint(z2));
+
+	Point a3 = Point(2, 2);
+	Point b3 = Point(4, 4);
+	Point z3 = Point(6, 6);
+	Line line3 = Line(a3, b3);
+	REQUIRE(!line3.isPoint(z3));
+}
+TEST_CASE("Midpoint Test")
+{
+	Point a = Point(2, 2);
+	Point b = Point(4, 4);
+	Point z = Point(3, 3);
+	Line line1 = Line(a, b);
+	REQUIRE(line1.getMidpoint().getX() == z.getX());
+	REQUIRE(line1.getMidpoint().getY() == z.getY());
 }

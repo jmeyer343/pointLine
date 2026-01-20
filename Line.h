@@ -13,6 +13,7 @@ class Line {
         double length();
         double getSlope();
         bool isPoint(Point z);
+        Point getMidpoint();
 
     private:
         Point aVal;

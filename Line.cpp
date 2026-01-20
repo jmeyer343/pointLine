@@ -100,3 +100,27 @@ Point Line::getMidpoint()
 
     return midpoint;
 }
+
+void Line::extendLine(double length)
+{
+    double smallX;
+    double bigX;
+
+    if (aVal.getX() > bVal.getX())
+    {
+        bigX = aVal.getX();
+        smallX = bVal.getX();
+    }
+    else if (aVal.getX() < bVal.getX())
+    {
+        bigX = bVal.getX();
+        smallX = aVal.getX();
+    }
+    else
+    {
+        throw invalid_argument("Not a valid Line");
+    }
+
+    //pythagorean theorem
+    
+}

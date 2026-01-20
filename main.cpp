@@ -79,3 +79,11 @@ TEST_CASE("Midpoint Test")
 	REQUIRE(line1.getMidpoint().getX() == z.getX());
 	REQUIRE(line1.getMidpoint().getY() == z.getY());
 }
+TEST_CASE("Extend Line")
+{
+	Point a = Point(2, 2);
+	Point b = Point(4, 4);
+	Line line1 = Line(a, b);
+	line1.extendLine(2.0);
+	REQUIRE(line1.length() == 6.8);
+}

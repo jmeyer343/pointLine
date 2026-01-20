@@ -43,3 +43,18 @@ TEST_CASE("Line Length")
 	Line line1 = Line(a, b);
 	REQUIRE(line1.length() == 2.8);
 }
+TEST_CASE("Slope")
+{
+	Point a = Point(2, 4);
+	Point b = Point(4, 3);
+	Line line1 = Line(a, b);
+	REQUIRE(line1.getSlope() == -0.5);
+}
+TEST_CASE("Is Point On Line")
+{
+	Point a = Point(2, 2);
+	Point b = Point(4, 4);
+	Point z = Point(3, 3);
+	Line line1 = Line(a, b);
+	REQUIRE(line1.isPoint(z));
+}

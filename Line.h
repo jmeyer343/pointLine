@@ -11,6 +11,8 @@ class Line {
         Point getPointB();
 
         double length();
+        double getSlope();
+        bool isPoint(Point z);
 
     private:
         Point aVal;

@@ -33,3 +33,19 @@ double Line::cleanDecimal(double val) //sets double to a max of one decimal spac
     temp = tempAsInt / 10.0;
     return temp;
 }
+
+double Line::getSlope()
+{
+    double numerator = 0.0;
+    double denominator = 0.0;
+
+    numerator = bVal.getY() - aVal.getY();
+    denominator = bVal.getX() - aVal.getX();
+
+    return (numerator/denominator);
+}
+
+bool Line::isPoint(Point z)
+{
+    
+}

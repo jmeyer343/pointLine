@@ -14,7 +14,7 @@ class Line {
         double getSlope();
         bool isPoint(Point z);
         Point getMidpoint();
-        void extendLine(double length);
+        void extendLine(double newlength);
 
     private:
         Point aVal;

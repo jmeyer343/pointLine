@@ -101,26 +101,46 @@ Point Line::getMidpoint()
     return midpoint;
 }
 
-void Line::extendLine(double length)
+void Line::extendLine(double newlength)
 {
     double smallX;
     double bigX;
+    double smallY;
+    double bigY;
+    bool isABig;
 
     if (aVal.getX() > bVal.getX())
     {
         bigX = aVal.getX();
+        bigY = aVal.getY();
         smallX = bVal.getX();
+        smallY = bVal.getY();
+        isABig = true;
     }
     else if (aVal.getX() < bVal.getX())
     {
         bigX = bVal.getX();
+        bigY = bVal.getY();
         smallX = aVal.getX();
+        smallY = aVal.getY();
+        isABig = false;
     }
     else
     {
         throw invalid_argument("Not a valid Line");
     }
 
-    //pythagorean theorem
-    
+    double xExtend = ((bigX-smallX)/length()) * newlength;
+    double yExtend = ((bigY-smallY)/length()) * newlength;
+ 
+    if (isABig)
+    {
+        aVal = Point(aVal.getX()+xExtend, aVal.getY()+yExtend);
+        bVal = Point(bVal.getX()-xExtend, bVal.getY()-yExtend);
+    } 
+    else
+    {
+        aVal = Point(aVal.getX()-xExtend, aVal.getY()-yExtend);
+        bVal = Point(bVal.getX()+xExtend, bVal.getY()+yExtend);
+    }
 }

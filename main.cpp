@@ -57,4 +57,10 @@ TEST_CASE("Is Point On Line")
 	Point z = Point(3, 3);
 	Line line1 = Line(a, b);
 	REQUIRE(line1.isPoint(z));
+
+	Point a2 = Point(2, 2);
+	Point b2 = Point(4, 4);
+	Point z2 = Point(8, 17.3);
+	Line line2 = Line(a2, b2);
+	REQUIRE(!line2.isPoint(z2));
 }

@@ -17,6 +17,10 @@ class Line {
     private:
         Point aVal;
         Point bVal;
-
+        double slope;
+        double yIntercept;
         double cleanDecimal(double val);
+        double calculateSlope();
+        double calculateYIntercept();
+
 };

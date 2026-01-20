@@ -7,6 +7,8 @@ Line::Line(Point a, Point b)
 {
     aVal = a;
     bVal = b;
+    slope = calculateSlope();
+    yIntercept = calculateYIntercept();
 }
 
 Point Line:: getPointA()
@@ -36,6 +38,23 @@ double Line::cleanDecimal(double val) //sets double to a max of one decimal spac
 
 double Line::getSlope()
 {
+    return slope;
+}
+
+bool Line::isPoint(Point z)
+{
+    bool reVal = false;
+    double newY = slope * z.getX() + yIntercept;
+    if (cleanDecimal(newY) == z.getY())
+    {
+        reVal = true;
+    }
+    return reVal;
+}
+
+double Line::calculateSlope()
+{
+    
     double numerator = 0.0;
     double denominator = 0.0;
 
@@ -43,9 +62,11 @@ double Line::getSlope()
     denominator = bVal.getX() - aVal.getX();
 
     return (numerator/denominator);
+
 }
 
-bool Line::isPoint(Point z)
+double Line::calculateYIntercept()
 {
-    
+    double b = aVal.getY() - (slope*aVal.getX());
+    return b;
 }
